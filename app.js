@@ -1,6 +1,10 @@
-console.log("App is running");
-const onToDoFormSubmit = (event) => {
-event.preventDefault();
-console.log("form submit");
-}
-$('#to-do-form').on("submit", onToDoFormSubmit);
+console.log("App starts");
+const todoList = [];
+const onTodoFormSubmit = (event) => {
+  event.preventDefault();
+  const $todo = $('input[name="todo"]');
+  const todoItem = { title: $todo.val(), done: false };
+  todoList.push(todoItem);
+  console.log("todoList", todoList);
+};
+$("#todo-form").on("submit", onTodoFormSubmit);
